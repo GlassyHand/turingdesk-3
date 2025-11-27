@@ -330,8 +330,10 @@ function loadRegionBoundary(regionName) {
         return;
     }
     
-    // GeoJSON 파일 로드
-    fetch(`geojson_file/${fileName}`)
+    // GeoJSON 파일 로드 (GitHub Pages 호환: 절대 경로 사용)
+    // repository 이름이 URL에 포함되어도 작동하도록 현재 경로 기준으로 계산
+    const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+    fetch(`${basePath}/geojson_file/${fileName}`)
         .then(response => response.json())
         .then(data => {
             // 기존 레이어가 있으면 제거
