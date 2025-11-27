@@ -1,0 +1,58 @@
+// 스토리
+const stories = {
+    1: [{ speaker: "senior", text: "무안군 인간 쉘터의 검문소에서 일하게 된 걸 축하해.", expression: "murfy-smile"},
+        { speaker: "senior", text: "어떤 일을 하는지는 알고 있나?", expression: "murfy-talk"},
+        { speaker: "player", text: "네, 인간과 안드로이드를 구분해서 인간만을 통과시켜야 합니다!", expression: "yuri-response"},
+        { speaker: "senior", text: "그래, 맞아. 인간만을 대피소에 들이고, 인간인 척 하는 인공지능 로봇들은 전부 내쫓는 것." , expression: "murfy-smile"},
+        { speaker: "senior", text: "그들을 구분하는 기준은 딱 하나야." , expression: "murfy-talk"},
+        { speaker: "senior", text: "외관상의 차이." , expression: "murfy-default"},
+        { speaker: "senior", text: "인공지능 로봇은 대부분 기계 부품이 겉으로 드러나 있어.", expression: "murfy-hmm" },
+        { speaker: "senior", text: "벗겨진 피부 사이로 회색의 차가운 몸체가 보인다든가, 팔이 철골로 이루어져 있다든가...", expression: "murfy-hmm" },
+        { speaker: "senior", text: "인간인 것 같다면 초록색 버튼을 눌러 문을 열어줘.",expression: "murfy-default"},
+        { speaker: "senior", text: "안드로이드라고 판단된다면, 빨간색 버튼을 눌러.",expression: "murfy-default"},
+        { speaker: "senior", text: "안드로이드를 우리 쉘터에 들이지 않도록 주의 깊게 관찰하도록 해.",expression: "murfy-talk"},
+        { speaker: "senior", text: "행운을 빌어.",expression: "murfy-smile"}],
+
+    2: [{ speaker: "senior", text: "어제의 일은 어땠어? 어렵지 않았지?", expression: "murfy-smile"},
+        { speaker: "senior", text: "안타깝게도, 오늘은 확인해야 할 게 추가됐어.", expression: "murfy-default"},
+        { speaker: "senior", text: "이 신문 보여? 강원도 영월군의 로봇 연구소에서 심각한 방사능 사고가 있었대.", expression: "murfy-hmm"},
+        { speaker: "senior", text: "그러니 신분증을 확인해서, 강원도 출신의 방문자는 들여보내면 안될 것 같아.", expression: "murfy-hmm"},
+        { speaker: "player", text: "저, 제가 아직 한국의 지리에 익숙하지 않습니다만...", expression: "yuri-flustered"},
+        { speaker: "senior", text: "그럴 줄 알고 내가 준비했지. 자, 한국 지도야.", expression: "murfy-smile"},
+        { speaker: "senior", text: "손가락으로 드래그하면 지도를 움직일 수 있고, +를 누르면 확대... -를 누르면 축소할 수 있지.", expression: "murfy-talk"},
+        { speaker: "senior", text: "명심해, 강원도 출신의 방문자 전부야! 연구소가 있는 영월군뿐만 아니라, 원주나 정선, 강릉 등 강원도 출신의 방문자는 전부 피폭되었을 가능성이 있으니 받아주면 안돼!", expression: "murfy-hmm"},
+        { speaker: "player", text: "며, 명심하겠습니다!", expression: "yuri-response"},
+        { speaker: "senior", text: "좋아, 어제도 잘 했으니 오늘도 잘 할 수 있을 거야.", expression: "murfy-smile"},
+        { speaker: "senior", text: "자, 시작하지.", expression: "murfy-default"}],
+
+    3: [{ speaker: "senior", text: "좋은 아침.", expression: "murfy-smile"},
+        { speaker: "senior", text: "한국 지도에는 좀 익숙해졌어?", expression: "murfy-talk"},
+        { speaker: "player", text: "여러 번 보다 보면 나아질 것 같습니다!", expression: "yuri-response"},
+        { speaker: "senior", text: "기세 좋은데? 그럼 체크해야 할 기준이 더 늘어도 괜찮겠지?", expression: "murfy-smile"},
+        { speaker: "player", text: "네? 어, 어떤...", expression: "yuri-flustered"},
+        { speaker: "senior", text: "부산과 울산에 있는 로봇 연구소에서도 방사능 사고가 있었다고 해. 어제 들어온 따끈따끈한 제보야.", expression: "murfy-hmm"},
+        { speaker: "senior", text: "그러니까, 부산과 울산 출신의 방문자는 재량껏 전부 거절해야 하는 건 알겠지?", expression: "murfy-hmm"},
+        { speaker: "player", text: "강원도, 부산, 울산... 알겠습니다.", expression: "yuri-default"},
+        { speaker: "senior", text: "아, 그리고 상부에서 명령이 내려왔어.", expression: "murfy-talk"},
+        { speaker: "senior", text: "이제 무작정 외관과 출신지만 보고 거르지 말고, 말을 걸어봐야 한다나?", expression: "murfy-hmm"},
+        { speaker: "senior", text: "간혹 성대기관이 고장난 로봇이 있대. '아아-안- 녀엉-' 이렇게 말한다는데. ", expression: "murfy-hmm"},
+        { speaker: "player", text: "그럼 모든 이들에게 말을 걸어봐야 하는 건가요?", expression: "yuri-flustered"},
+        { speaker: "senior", text: "뭐, 전부 걸 필요는 없지. 로봇이 확실한 애들한테까지 물어볼 필요는 없잖아!", expression: "murfy-smile"},
+        { speaker: "senior", text: "아, 진짜 마지막.", expression: "murfy-default"},
+        { speaker: "senior", text: "신분증에 만료기한 좀 확인해줘.", expression: "murfy-default"},
+        { speaker: "senior", text: "2126년 이전에 발급된 카드들은 모조품일 가능성이 있으니 전부 거절해야 한대.", expression: "murfy-default"},
+        { speaker: "player", text: "그럼 2125년에 발급된 카드도 거절해야 하는 겁니까?", expression: "yuri-default"},
+        { speaker: "senior", text: "이젠 척하면 척이네! 맞아, 2125년 이전에 발급된 카드라면 거절하면 돼.", expression: "murfy-smile"},
+        { speaker: "senior", text: "자, 그럼 오늘도... 수고하라고!", expression: "murfy-default"},],
+
+    4: [{ speaker: "senior", text: "네 번째 날." },
+        { speaker: "senior", text: "당신의 경험은 쌓여가고 있습니다." },
+        { speaker: "senior", text: "하지만 적들도 더욱 똑똑해지고 있습니다." }],
+
+    5: [{ speaker: "senior", text: "마지막 날입니다." },
+        { speaker: "senior", text: "모든 것이 오늘 결정됩니다." },
+        { speaker: "senior", text: "최선을 다하세요." }]};
+
+// 캐릭터 정보
+const characters = {senior: {name: "선배", portrait: "senior"},
+    player: {name: "검문관", portrait: "player"}};
